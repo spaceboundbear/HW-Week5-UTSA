@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body class="mx-5">
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container col-12 mx-auto">
+      <!-- Timeblocks go here -->
+      <div class="bg-primary"></div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">8:00 AM</span>
+        </div>
+        <textarea class="form-control" id="text-area-8am" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-8am" onclick="javascript: clearTextArea8am();">Clear</button>
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">9:00 AM</span>
+        </div>
+        <textarea class="form-control" id="text-area-9am" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-9am" onclick="javascript: clearTextArea9am();">Clear</button>
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">10:00 AM</span>
+        </div>
+        <textarea class="form-control" id="text-area-10am" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-10am" onclick="javascript: clearTextArea10am();">Clear</button>
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">11:00 AM</span>
+        </div>
+        <textarea class="form-control" id="text-area-11am" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-11am" onclick="javascript: clearTextArea11am();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">12:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-12pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-12pm" onclick="javascript: clearTextArea12pm();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">1:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-1pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-1pm" onclick="javascript: clearTextArea1pm();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">2:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-2pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-2pm" onclick="javascript: clearTextArea2pm();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">3:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-3pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-3pm" onclick="javascript: clearTextArea3pm();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">4:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-4pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-4pm" onclick="javascript: clearTextArea4pm();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">5:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-5pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear" class="col-1 btn btn-secondary clear-5pm" onclick="javascript: clearTextArea5pm();">Clear</button>
+
+      </div>
+      <div class="input-group my-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text justify-content-center font-weight-bold" style="width: 150px;">6:00 PM</span>
+        </div>
+        <textarea class="form-control" id="text-area-6pm" aria-label="With textarea"></textarea>
+        <button type="button" id="save" class="col-1 btn btn-primary">Save</button>
+        <button type="button" id="clear-6pm" class="col-1 btn btn-secondary clear-6pm" onclick="javascript: clearTextArea6pm();">Clear</button>
+
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
